@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{parent()}}{{categorie.libelle}}
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-10 text-primary">
+				<h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold">{{categorie.libelle}}</h1>
+				<h5>
+				<a href="{{path('app_base')}}" class="link">Retour a l'accueil</a>
+				</h5>
+
+
+				<div class="row row-cols-1 row-cols-md-3 g-4">
+
+					{% for c in categorie.clubs %}
+						<div class="col">
+							<div class="card">
+							{% set chemin = 'images/'~c.image %}
+								<img src="{{asset(chemin)}}" class="card-img-top" alt="logo club" style="width: 100px">
+								<div class="card-body">
+									<h5 class="card-title">
+										<a href="{{path('app_unclub',{'id':c.id})}}">{{c.nom}}</a>
+									</h5>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+
+
+			{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{parent()}}Clubs du monde 
+{% endblock %}
+
+{% block body %}
+     <div class="contrainer-fluid">
+     <div class="row justify-content-center">
+      <div class="col-10 text-primary">
+           <h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold">Clubs du monde</h1>
+           <div class="card-group">
+					<div class="card">
+						<img src="images/foot/monde/logoalnassr.webp" class="card-img-top" alt="logo Al Nassr" style="width: 170px">
+						<div class="card-body">
+							<h5 class="card-title">
+								<a href="{{path('app_alnassr')}}"> Al Nassr</a></h5>
+							</div>
+						</div>
+						<div class="card">
+							<img src="images/foot/monde/logoalhilal.webp" class="card-img-top" alt="logo Al Hilal" style="width: 170px">
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="{{path('app_alhilal')}}"> Al Hilal </a></h5>
+								</div>
+							</div>
+							<div class="card">
+								<img src="images/foot/monde/logoalittihad.webp" class="card-img-top" alt="logo Al Ittihad" style="width: 165px">
+								<div class="card-body">
+									<h5 class="card-title">
+										<a href="{{path('app_alittihad')}}"> Al Ittihad </a></h5>
+									</div>
+								</div>
+								</div>	
+                <div class="card-group">
+					<div class="card">
+						<img src="images/foot/monde/logointermiami.webp" class="card-img-top" alt="logo Inter Miami" style="width: 170px">
+						<div class="card-body">
+							<h5 class="card-title">
+								<a href="{{path('app_intermiami')}}"> Inter Miami</a></h5>
+							</div>
+						</div>
+						<div class="card">
+							<img src="images/foot/monde/logorangers.webp" class="card-img-top" alt="logo Rangers" style="width: 170px">
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="{{path('app_rangers')}}"> Rangers </a></h5>
+								</div>
+							</div>
+							<div class="card">
+								<img src="images/foot/monde/logoceltic.webp" class="card-img-top" alt="logo Al Ittihad" style="width: 168px">
+								<div class="card-body">
+									<h5 class="card-title">
+										<a href="{{path('app_celtic')}}"> Celtic </a></h5>
+									</div>
+								</div>
+								</div>	   
+                <div class="card-group">
+					<div class="card">
+						<img src="images/foot/monde/logofluminense.webp" class="card-img-top" alt="logo Fluminense" style="width: 170px">
+						<div class="card-body">
+							<h5 class="card-title">
+								<a href="{{path('app_fluminense')}}"> Fluminense</a></h5>
+							</div>
+						</div>
+						<div class="card">
+							<img src="images/foot/monde/logoflamengo.webp" class="card-img-top" alt="logo Flamengo" style="width: 160px">
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="{{path('app_flamengo')}}"> Flamengo </a></h5>
+								</div>
+							</div>
+							<div class="card">
+								<img src="images/foot/monde/logobotafogo.webp" class="card-img-top" alt="logo Botafogo" style="width: 168px">
+								<div class="card-body">
+									<h5 class="card-title">
+										<a href="{{path('app_botafogo')}}"> Botafogo </a></h5>
+									</div>
+								</div>
+								</div>	      				                   
+{% endblock %}           

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{parent()}}Oceanie
+{% endblock %}
+
+{% block body %}
+     <div class="container-fluid">
+       <div class="row justify-content-center">
+         <div class="col-10 text-primary">
+            <h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold">Oceanie</h1>
+            <div class="card-group">
+					<div class="card">
+						<img src="images/foot/nations/oceanie/australie.webp" class="card-img-top" alt="Australie" style="width: 270px">
+						<div class="card-body">
+							<h5 class="card-title">
+								<a href="{{path('app_australie')}}"> Australie </a></h5>
+							</div>
+						</div>
+						<div class="card">
+							<img src="images/foot/nations/oceanie/nouvellezelande.webp" class="card-img-top" alt="Nouvelle-Zelande" style="width: 270px">
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="{{path('app_nouvellezelande')}}"> Nouvelle-Zelande </a></h5>
+								</div>
+							</div>
+							<div class="card">
+								<img src="images/foot/nations/oceanie/fidji.webp" class="card-img-top" alt="Fidji" style="width: 270px">
+								<div class="card-body">
+									<h5 class="card-title">
+										<a href="{{path('app_fidji')}}"> Fidji</a></h5>
+									</div>
+								</div>
+        </div>   
+{% endblock %}

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="style.css"/>
+		<title>
+			{% block title %}Site
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			<link href="https://bootswatch.com/5/lux/bootstrap.min.css" rel="stylesheet">
+			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+		{% endblock %}
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg bg-light" data-bs-theme="light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="{{path('app_base')}}">Find Your Shirt
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs- target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria- label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarColor03">
+					<ul class="navbar-nav me-auto">
+						<li class="nav-item"></li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">FOOT</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="{{path('app_categorie',{'id':1})}}">Ligue 1</a>
+								<a class="dropdown-item" href="{{path('app_categorie',{'id':2})}}">Premier League</a>
+								<a class="dropdown-item" href="{{path('app_categorie',{'id':3})}}">Liga</a>
+								<a class="dropdown-item" href="{{path('app_categorie',{'id':5})}}">Bundesliga</a>
+								<a class="dropdown-item" href="{{path('app_categorie',{'id':4})}}">Serie A</a>
+								<a class="dropdown-item" href="{{path('app_categorie',{'id':6})}}">Clubs du monde</a>
+								<a class="dropdown-item" href="{{path('app_categorie',{'id':7})}}">Nations</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"> NBA</a>
+							<div class="dropdown-menu">
+								<a class="dropdown-item" href="{{path('app_categorie',{'id':8})}}">Conférence OUEST</a>
+								<a class="dropdown-item" href="{{path('app_categorie',{'id':9})}}">Conférence EST</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+					<a class="nav-link active" href="{{path('app_categorie',{'id':10})}}">Formule 1</a>
+          </li>
+						<li class="nav-item">
+							<a class="nav-link active" href="{{path('app_contact')}}">Contact</a>
+						</li>
+					<li class="nav-item">
+							<a class="nav-link active" href="{{path('app_panier')}}">Panier</a>
+						</li>
+					</li>
+					<ul class="navbar-nav me-auto">
+						{% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+							<li class="nav-item">
+								<a class="nav-link" href="{{path('app_login')}}">Se connecter
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{path('app_register')}}">S'inscrire
+								</a>
+							</li>
+						{% else %}
+							<li class="nav-item">
+								<a class="nav-link" href="{{path('app_logout')}}">
+									{{app.user.email}}
+									<i class="bi bi-x-circle-fill"></i>
+								</a>
+							</li>
+						{% endif %}
+					</div>
+				</body>
+			</html>
+		</div>
+	</nav>
+{% for message in app.flashes('notice') %}
+<h2 class="alert alert-warning text-center mt-4 mb-4" role="alert">{{ message }}</h2>
+{% endfor %}
+{% block body %}Share{% endblock %}
+
+
+
+
+<div class="" style="width: 100%;">
+
+  <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: grey"
+          >
+    
+    <div class="container p-4 pb-0">
+      
+      <section class="">
+    
+        <div class="row">
+          
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Company name
+            </h6>
+            <p>
+            Bienvenue sur notre site Find Your Shirt, ici nous vendons des maillots de Foot, de NBA ou encore de Formule 1.
+            </p>
+          </div>
+          
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <p>
+              <a class="text-white">MDBootstrap</a>
+            </p>
+            <p>
+              <a class="text-white">MDWordPress</a>
+            </p>
+            <p>
+              <a class="text-white">BrandFlow</a>
+            </p>
+            <p>
+              <a class="text-white">Bootstrap Angular</a>
+            </p>
+          </div>
+    
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Liens utiles
+            </h6>
+            <a href="{{path('app_login')}}" class="link">Se connecter</a>
+           <a href="{{path('app_ventes')}}" class="link">Conditions de Ventes</a>
+            <a href="{{path('app_contact')}}" class="link">Aide</a>
+          </div>
+
+          
+          <hr class="w-100 clearfix d-md-none">
+
+          
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+            Contact
+            </h6>
+            <p><i class="fas fa-home mr-3"></i>Arras 62217 France</p>
+            <p><i class="fas fa-envelope mr-3"></i> findyourshirt@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> +33 6 60 60 60 60 </p>
+          </div>
+        
+        </div>
+        
+      </section>
+      
+
+      <hr class="my-3">
+
+      
+      <section class="p-3 pt-0">
+        <div class="row d-flex align-items-center">
+          
+          <div class="col-md-7 col-lg-8 text-center text-md-start">
+            
+            <div class="p-3">
+              © 2020 Copyright:
+              <a class="text-white" href="https://mdbootstrap.com/"
+                 >MDBootstrap.com</a
+                >
+            </div>
+        
+          </div>
+          
+
+          
+          <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+    
+            <a
+               class="btn btn-outline-light btn-floating m-1 text-dark"
+               role="button"
+               <i class="bi bi-facebook"></i>
+               <a href="#">
+              </a>
+
+            
+            <a
+               class="btn btn-outline-light btn-floating m-1 text-dark"
+               role="button"
+               ><i class="fab fa-twitter"></i>
+               <a href="#">
+               </a>
+
+            
+            <a
+               class="btn btn-outline-light btn-floating m-1 text-dark"
+               role="button"
+               ><i class="fab fa-google"></i>
+               <a href="#">
+               </a>
+
+            
+            <a
+               class="btn btn-outline-light btn-floating m-1 text-dark"
+               role="button"
+               ><i class="fab fa-instagram"></i>
+               <a href="#">
+               </a>
+          </div>
+          
+        </div>
+      </section>
+      
+    </div>
+    
+  </footer>
+  
+</div>
+
+</body>
+</html>
+
+
+{% block javascripts %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+{% endblock %}

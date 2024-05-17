@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{parent()}}Nations
+{% endblock %}
+
+{% block body %}
+     <div class="container-fluid">
+       <div class="row justify-content-center">
+         <div class="col-10 text-primary">
+            <h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold">Nations</h1>
+               <div class="card-group">
+					<div class="card">
+						<img src="images/foot/nations/europe/europe.webp" class="card-img-top" alt="Europe" style="width: 220px">
+						<div class="card-body">
+							<h5 class="card-title">
+								<a href="{{path('app_europe')}}"> Europe</a></h5>
+							</div>
+						</div>
+						<div class="card">
+							<img src="images/foot/nations/ameriquedunord/ameriquedunord.webp" class="card-img-top" alt="Amérique du Nord" style="width: 220px">
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="{{path('app_ameriquedunord')}}"> Amerique du Nord </a></h5>
+								</div>
+							</div>
+							<div class="card">
+								<img src="images/foot/nations/ameriquedusud/ameriquedusud.webp" class="card-img-top" alt="Amerique du sud" style="width: 220px">
+								<div class="card-body">
+									<h5 class="card-title">
+										<a href="{{path('app_ameriquedusud')}}"> Amerique du sud  </a></h5>
+									</div>
+								</div>
+								</div> 
+              <div class="card-group">
+					<div class="card">
+						<img src="images/foot/nations/afrique/afrique.webp" class="card-img-top" alt="Afrique" style="width: 220px">
+						<div class="card-body">
+							<h5 class="card-title">
+								<a href="{{path('app_afrique')}}"> Afrique </a></h5>
+							</div>
+						</div>
+						<div class="card">
+							<img src="images/foot/nations/asie/asie.webp" class="card-img-top" alt="Asie" style="width: 220px">
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="{{path('app_asie')}}"> Asie </a></h5>
+								</div>
+							</div>
+							<div class="card">
+								<img src="images/foot/nations/oceanie/oceanie.webp" class="card-img-top" alt="oceanie" style="width: 220px">
+								<div class="card-body">
+									<h5 class="card-title">
+										<a href="{{path('app_oceanie')}}"> Oceanie </a></h5>
+									</div>
+								</div>
+								</div>     
+{% endblock %}

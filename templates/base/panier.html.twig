@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{parent()}}Panier
+{% endblock %}
+
+{% block body %}
+	<link rel="stylesheet" href="style.css">
+	<div class="container-fluid">
+		<div class="row justify-content-center">
+			<div class="col-10 text-primary">
+				<h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold">Panier</h1>
+
+			</head>
+			<body class="panier">
+				<h5>
+            <a href="{{path('app_base')}}" class="link">Retour a l'accueil</a>
+            </h5>
+				<section>
+					<table>
+						<tr>
+							<th></th>
+							<th>Nom</th>
+							<th>Prix</th>
+							<th>Supprimer</th>
+						</tr>
+						<tr>
+							<td><img src="images/supprimer.webp"></td>
+						</tr>
+
+						<tr class="total">
+						   <th>Total</th>
+						</tr>
+					</table>
+				</section>
+			</body>
+		</div>
+	</div>
+</div>{% endblock %}

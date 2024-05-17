@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+	{{parent()}}Accueil
+{% endblock %}
+{% block body %}
+	<h1 class="text-center text-primary"></h1>
+	<h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold">
+		Find Your Shirt</h1>
+	<p class="text-center text-secondary mb-4 pb-4 display-2">
+		Trouvez ici les meilleurs maillots du monde sportif
+	</p>
+
+
+	<div>
+		<h1>CLIQUEZ SUR UN MAILLOT !
+		</h1>
+		<img src="images/maillot.png" class="maillot" alt="Image Réactive" usemap="#image-map">
+		<map name="image-map">
+			<area shape="poly" coords="51,171,142,134,239,167,250,514,70,507" href="https://s3-4390.nuage-peda.fr/site/unclub/23">
+			<area shape="poly" coords="292,144,445,168,478,287,432,498,308,489" href="https://s3-4390.nuage-peda.fr/site/unclub/68">
+			<area shape="poly" coords="593,138,740,173,779,301,707,516,619,496" href="https://s3-4390.nuage-peda.fr/site/unclub/30">
+			<area shape="poly" coords="399,138,481,136,542,169,584,276,551,309,535,508,435,486,481,289,453,176" href="https://s3-4390.nuage-peda.fr/site/unclub/87">
+			<area shape="poly" coords="489,134,590,139,646,174,679,292,666,311,636,289,611,514,537,506,55,302" href="https://s3-4390.nuage-peda.fr/site/unclub/22">
+			<area shape="poly" coords="703,142,782,133,858,177,892,289,823,514,716,514,744,339,782,306,749,180" href="https://s3-4390.nuage-peda.fr/site/unclub/21">
+			<area shape="poly" coords="799,138,859,147,968,177,999,300,965,323,938,493,832,482,838,298,893,295,855,174" href="https://s3-4390.nuage-peda.fr/site/unclub/91">
+		</map>
+
+
+		
+			
+
+		<h1>TOUS NOS MAILLOTS</h1>
+		<h5>par ordre alphabétique</h5>
+		<br>
+		<br>
+
+		<div class="row row-cols-1 row-cols-md-4 g-1">
+			{% for maillot in maillots %}
+
+				<div class="card" style="width: 18rem;">
+					<img src="images/produits/{{maillot.image}}" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">{{maillot.nom}}</h5>
+						<p class="card-text">
+							{% for associer in maillot.associers %}
+								<span class="badge text-bg-primary">{{associer.taille.libelle}}</span>
+
+							{% endfor %}
+						</p>
+						{% if app.user %}
+						{% if maillot not in app.user.favoris %}
+						<a href="{{path('app_favoris_produit',{'id':maillot.id})}}" class="btn btn-primary">
+						</a>
+						{% elseif maillot in app.user.favoris %}
+						<a href="{{path('app_suppfav',{'id':produit.id})}}"
+						</a>
+						 {% endif %}
+						 {% else %}
+						 <a href="{{path('app_login')}}">
+						 {% endif %}
+						<a href="{{path('app_panier')}}" class="btn btn-primary">AJOUTER AU PANIER</a>
+					</div>
+				</div>
+				
+			{% endfor %}
+            {% endblock %}
+			

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{parent()}}Asie
+{% endblock %}
+
+{% block body %}
+     <div class="container-fluid">
+       <div class="row justify-content-center">
+         <div class="col-10 text-primary">
+            <h1 class="text-center text-primary mt-4 pt-4 display-1 fw-bold">Asie</h1>
+             <div class="card-group">
+					<div class="card">
+						<img src="images/foot/nations/asie/japon.webp" class="card-img-top" alt="Japon" style="width: 230px">
+						<div class="card-body">
+							<h5 class="card-title">
+								<a href="{{path('app_japon')}}"> Japon </a></h5>
+							</div>
+						</div>
+						<div class="card">
+							<img src="images/foot/nations/asie/coreedusud.webp" class="card-img-top" alt="Coree du Sud" style="width: 230px">
+							<div class="card-body">
+								<h5 class="card-title">
+									<a href="{{path('app_coreedusud')}}"> Coree du sud </a></h5>
+								</div>
+							</div>
+							<div class="card">
+								<img src="images/foot/nations/asie/chine.webp" class="card-img-top" alt="Chine" style="width: 230px">
+								<div class="card-body">
+									<h5 class="card-title">
+										<a href="{{path('app_chine')}}"> Chine </a></h5>
+									</div>
+								</div>
+								</div>  
+{% endblock %}
